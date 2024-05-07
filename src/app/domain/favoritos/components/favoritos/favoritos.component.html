@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row gap-3">
+        @for (producto of productosFavoritos; track producto; let i = $index) 
+        {
+            <div class="col mb-3 p-2 border rounded">
+                <div class="text-center">
+                    <img [src]="producto.imagen" alt="{{producto.nombre}}" class="m-2">
+                </div>
+                <hr>
+                <p>${{producto.precio}}</p>
+                <h4>{{producto.nombre}}</h4>
+                <hr>
+                <p>{{producto.descripcion}}</p>
+                <div class="d-flex flex-row justify-content-between pt-3">
+                    <i class="fa-solid fa-star"></i>
+                    <p>{{producto.rating}}</p>
+                </div>
+                <hr>
+                <div>
+                    <button class="btn" (click)="eliminarDeFavoritos(i)">Eliminar de Favoritos</button>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
